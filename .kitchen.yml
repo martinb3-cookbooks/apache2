@@ -14,6 +14,7 @@ platforms:
   run_list:
   - recipe[yum]
 - name: centos-6.5
+- name: ubuntu-10.04
   run_list:
   - recipe[yum]
 - name: ubuntu-12.04
@@ -28,12 +29,24 @@ platforms:
 - name: debian-7.4
   run_list:
   - recipe[apt]
+- name: fedora-18
+  attributes:
+    apache:
+      version: '2.4'
+- name: fedora-19
+  attributes:
+    apache:
+      version: '2.4'
 - name: fedora-20
+  attributes:
+    apache:
+      version: '2.4'
 - name: freebsd-9.2
-#- name: amazon
-#- name: arch
-#- name: redhat
-#- name: scientific-6.4
+- name: suse-11.3
+# - name: amazon
+# - name: arch
+# - name: redhat
+# - name: scientific-6.4
 #  driver:
 #    box: lyte-scientific-6-minimal
 #    box_url: http://lyte.id.au/vagrant/sl6-64-lyte.box
@@ -66,3 +79,4 @@ suites:
       - recipe[apache2_test::mod_python]
       - recipe[apache2_test::mod_ssl]
 #      - recipe[apache2_test::mod_status_remote]
+#      - recipe[minitest-handler]
